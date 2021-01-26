@@ -24,6 +24,9 @@
 ```
 
 #### poc2 `org.apache.ibatis.datasource.jndi.JndiDataSourceFactory`
+
+**mybatis-3.0.5.jar**
+
 ```
 {
   "@type": "org.apache.ibatis.datasource.jndi.JndiDataSourceFactory",
